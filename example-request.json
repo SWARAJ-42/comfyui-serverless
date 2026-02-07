@@ -1,0 +1,221 @@
+{
+  "input": {
+    "workflow": {
+      "3": {
+        "inputs": {
+          "seed": 42,
+          "steps": 25,
+          "cfg": 6,
+          "sampler_name": "uni_pc",
+          "scheduler": "simple",
+          "denoise": 1,
+          "model": [
+            "55",
+            0
+          ],
+          "positive": [
+            "50",
+            0
+          ],
+          "negative": [
+            "50",
+            1
+          ],
+          "latent_image": [
+            "50",
+            2
+          ]
+        },
+        "class_type": "KSampler",
+        "_meta": {
+          "title": "KSampler"
+        }
+      },
+      "6": {
+        "inputs": {
+          "text": "The Little Prince, fox, simple poses, gentle movement, Van Gogh style, starry sky, glowing stars, soft focus, dreamy bokeh, fluffy felt textures, vibrant colors, magical lighting, warm glow, minimalistic action, subtle animation, flowing yellow scarf, peaceful atmosphere, glowing lights, 3D felt figurines, enchanting fantasy, serene, soft swirling vortex",
+          "clip": [
+            "38",
+            0
+          ]
+        },
+        "class_type": "CLIPTextEncode",
+        "_meta": {
+          "title": "CLIP Text Encode (Positive Prompt)"
+        }
+      },
+      "7": {
+        "inputs": {
+          "text": "色调艳丽，颜色溢出，过曝，欠曝，光照不一致，强阴影，反光，高光爆炸，整体发灰，色彩漂移，颜色闪烁，画面抖动，镜头晃动，镜头移动，缩放变化，透视变化，视角变化，景深，背景虚化，杂乱背景，复杂背景，非纯白背景，渐变背景，纹理背景，噪点背景，背景元素，背景人物，地面，道具，阴影投射到背景\n\n静态画面，卡帧，掉帧，帧率不稳定，时间跳跃，动作不连贯，动作断裂，动作重复错误，非循环动画，无法无缝循环，首尾帧不一致，姿态漂移，角色抖动，身体漂移，位置漂移，比例变化，角色大小变化\n\n低质量，最差质量，模糊，细节模糊不清，分辨率过低，像素拉伸，像素断裂，像素不对齐，锯齿异常，压缩伪影，JPEG压缩残留，视频压缩噪点，马赛克，色块断层\n\n风格混乱，风格漂移，画风变化，不一致画风，非像素风，3D风格，写实风格，油画风，水彩风，插画风，摄影风，AI痕迹明显\n\n角色畸形，毁容，比例错误，头身比例变化，身体扭曲，形态畸形的肢体，多余肢体，缺失肢体，三条腿，多只手，多余手指，手指融合，画得不好的手部，画得不好的脸部，面部变形，五官漂移，表情闪烁\n\n倒着走，动作方向错误，左右方向反转，朝向不稳定，角色旋转，翻转错误\n\n字幕，文字，水印，logo，边框，UI元素，时间轴，进度条，标记，签名\n\n非2D，非平面，体积光，粒子特效，烟雾，火焰，光效特效，动态背景特效\n",
+          "clip": [
+            "38",
+            0
+          ]
+        },
+        "class_type": "CLIPTextEncode",
+        "_meta": {
+          "title": "CLIP Text Encode (Negative Prompt)"
+        }
+      },
+      "8": {
+        "inputs": {
+          "samples": [
+            "3",
+            0
+          ],
+          "vae": [
+            "39",
+            0
+          ]
+        },
+        "class_type": "VAEDecode",
+        "_meta": {
+          "title": "VAEDecode"
+        }
+      },
+      "28": {
+        "inputs": {
+          "text": "ComfyUI",
+          "images": [
+            "8",
+            0
+          ]
+        },
+        "class_type": "SaveAnimatedWEBP",
+        "_meta": {
+          "title": "SaveAnimatedWEBP"
+        }
+      },
+      "37": {
+        "inputs": {
+          "filename": "wan2.1_i2v_480p_14B_fp16.safetensors"
+        },
+        "class_type": "UNETLoader",
+        "_meta": {
+          "title": "UNETLoader"
+        }
+      },
+      "38": {
+        "inputs": {
+          "filename": "umt5_xxl_fp8_e4m3fn_scaled.safetensors"
+        },
+        "class_type": "CLIPLoader",
+        "_meta": {
+          "title": "CLIPLoader"
+        }
+      },
+      "39": {
+        "inputs": {
+          "filename": "wan_2.1_vae.safetensors"
+        },
+        "class_type": "VAELoader",
+        "_meta": {
+          "title": "VAELoader"
+        }
+      },
+      "47": {
+        "inputs": {
+          "text": "ComfyUI",
+          "images": [
+            "8",
+            0
+          ]
+        },
+        "class_type": "SaveWEBM",
+        "_meta": {
+          "title": "SaveWEBM"
+        }
+      },
+      "49": {
+        "inputs": {
+          "filename": "clip_vision_h.safetensors"
+        },
+        "class_type": "CLIPVisionLoader",
+        "_meta": {
+          "title": "CLIPVisionLoader"
+        }
+      },
+      "50": {
+        "inputs": {
+          "value": 256,
+          "positive": [
+            "6",
+            0
+          ],
+          "negative": [
+            "7",
+            0
+          ],
+          "vae": [
+            "39",
+            0
+          ],
+          "clip_vision_output": [
+            "51",
+            0
+          ],
+          "start_image": [
+            "52",
+            0
+          ]
+        },
+        "class_type": "WanImageToVideo",
+        "_meta": {
+          "title": "WanImageToVideo"
+        }
+      },
+      "51": {
+        "inputs": {
+          "text": "none",
+          "clip_vision": [
+            "49",
+            0
+          ],
+          "image": [
+            "52",
+            0
+          ]
+        },
+        "class_type": "CLIPVisionEncode",
+        "_meta": {
+          "title": "CLIPVisionEncode"
+        }
+      },
+      "52": {
+        "inputs": {
+          "image": "10470133bc270b6955fe628142b5768bfdcb684433b6f2e5959bc6dad658a7df.png"
+        },
+        "class_type": "LoadImage",
+        "_meta": {
+          "title": "LoadImage"
+        }
+      },
+      "54": {
+        "inputs": {
+          "value": 8,
+          "model": [
+            "37",
+            0
+          ]
+        },
+        "class_type": "ModelSamplingSD3",
+        "_meta": {
+          "title": "ModelSamplingSD3"
+        }
+      },
+      "55": {
+        "inputs": {
+          "filename": "gamesprite_2d_running163.safetensors",
+          "model": [
+            "54",
+            0
+          ]
+        },
+        "class_type": "LoraLoaderModelOnly",
+        "_meta": {
+          "title": "LoraLoaderModelOnly"
+        }
+      }
+    }
+  }
+}
