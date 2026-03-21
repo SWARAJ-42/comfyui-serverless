@@ -19,4 +19,8 @@ RUN comfy model download --url https://huggingface.co/Comfy-Org/Wan_2.1_ComfyUI_
 RUN comfy model download --url https://huggingface.co/Comfy-Org/Wan_2.1_ComfyUI_repackaged/resolve/main/split_files/vae/wan_2.1_vae.safetensors?download=true --relative-path models/vae --filename wan_2.1_vae.safetensors
 RUN comfy model download --url https://huggingface.co/Comfy-Org/Wan_2.1_ComfyUI_repackaged/resolve/main/split_files/clip_vision/clip_vision_h.safetensors?download=true --relative-path models/clip_vision --filename clip_vision_h.safetensors
 RUN comfy model download --url https://huggingface.co/Comfy-Org/Wan_2.1_ComfyUI_repackaged/resolve/main/split_files/text_encoders/umt5_xxl_fp8_e4m3fn_scaled.safetensors?download=true --relative-path models/text_encoders --filename umt5_xxl_fp8_e4m3fn_scaled.safetensors
+
 RUN comfy model download --url https://huggingface.co/swadhin42/lora_v1_run/resolve/main/gamesprite_2d_running163.safetensors?download=true --relative-path models/loras --filename gamesprite_2d_running163.safetensors
+RUN comfy model download --url https://huggingface.co/swadhin42/lora_v1_run/resolve/main/gamesprite_2d_walking163.safetensors?download=true --relative-path models/loras --filename gamesprite_2d_walking163.safetensors
+RUN comfy model download --url https://huggingface.co/swadhin42/lora_v1_run/resolve/main/gamesprite_2d_jumping163.safetensors?download=true --relative-path models/loras --filename gamesprite_2d_jumping163.safetensors
+RUN comfy model download --url https://huggingface.co/swadhin42/lora_v1_run/resolve/main/gamesprite_2d_idle163.safetensors?download=true --relative-path models/loras --filename gamesprite_2d_idle163.safetensors
